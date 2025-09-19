@@ -77,9 +77,7 @@
         
         .image-placeholder {
             background-color: #e6f2ff;
-            border: 2px dashed #207cca;
             border-radius: 8px;
-            height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -87,14 +85,37 @@
             color: #207cca;
             font-weight: bold;
             overflow: hidden;
+            position: relative;
+        }
+        
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .image-placeholder.small {
             height: 150px;
         }
         
+        .image-placeholder.medium {
+            height: 200px;
+        }
+        
         .image-placeholder.large {
             height: 300px;
+        }
+        
+        .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 8px;
+            font-size: 0.9rem;
+            text-align: center;
         }
         
         .card-container {
@@ -127,6 +148,13 @@
             color: #207cca;
             font-weight: bold;
             border-bottom: 2px solid #1e5799;
+            overflow: hidden;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .card:hover {
@@ -204,7 +232,26 @@
             justify-content: center;
             color: #207cca;
             font-weight: bold;
-            border: 2px dashed #207cca;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 8px;
+            font-size: 0.8rem;
+            text-align: center;
         }
         
         footer {
@@ -244,8 +291,9 @@
     <div class="container">
         <section class="intro">
             <h2>Introdução</h2>
-            <div class="">
-                [ESPAÇO PARA IMAGEM DE DESTAQUE: jogadores de vôlei em ação]
+            <div class="image-placeholder large">
+                <img src="img/qudra1.jpg" alt="Jogadores de vôlei em ação">
+                <div class="image-caption">Jogadores de vôlei em ação durante partida profissional</div>
             </div>
             <p>O voleibol é um dos esportes mais populares do Brasil, país reconhecido mundialmente por sua excelência nessa modalidade. Tornar-se um jogador profissional de vôlei é o sonho de muitos jovens atletas, mas o caminho é desafiador e requer dedicação, talento e perseverança.</p>
             <p>Neste guia, exploraremos os passos necessários para buscar uma carreira no vôlei profissional e analisaremos as probabilidades reais de alcançar esse objetivo.</p>
@@ -256,19 +304,25 @@
             
             <div class="card-container">
                 <div class="card">
-                    <div class="card-image">[IMAGEM: crianças jogando vôlei]</div>
+                    <div class="card-image">
+                        <img src="https://picsum.photos/400/300?random=2&kids" alt="Crianças jogando vôlei">
+                    </div>
                     <h3>Início e Formação Básica</h3>
                     <p>Comece cedo, preferencialmente entre 8 e 14 anos. Participe de escolinhas de vôlei e desenvolva os fundamentos básicos: passe, levantamento, ataque, bloqueio e saque.</p>
                 </div>
                 
                 <div class="card">
-                    <div class="card-image">[IMAGEM: competição juvenil]</div>
+                    <div class="card-image">
+                        <img src="https://picsum.photos/400/300?random=3&competition" alt="Competição juvenil">
+                    </div>
                     <h3>Participação em Competições</h3>
                     <p>Jogue por times escolares e participe de competições locais e estaduais. Isso proporciona experiência e visibilidade para scouts e técnicos.</p>
                 </div>
                 
                 <div class="card">
-                    <div class="card-image">[IMAGEM: treino em categoria de base]</div>
+                    <div class="card-image">
+                        <img src="https://picsum.photos/400/300?random=4&training" alt="Treino em categoria de base">
+                    </div>
                     <h3>Ingresso em Categorias de Base</h3>
                     <p>Busque entrar nas categorias de base de clubes reconhecidos. Muitos atletas profissionais foram descobertos em peneiras e competições de base.</p>
                 </div>
@@ -276,19 +330,25 @@
             
             <div class="card-container">
                 <div class="card">
-                    <div class="card-image">[IMAGEM: exercícios técnicos]</div>
+                    <div class="card-image">
+                        <img src="https://picsum.photos/400/300?random=5&exercise" alt="Exercícios técnicos">
+                    </div>
                     <h3>Desenvolvimento Técnico e Físico</h3>
                     <p>Invista em treinamento especializado, incluindo preparação física, técnica individual e compreensão tática do jogo.</p>
                 </div>
                 
                 <div class="card">
-                    <div class="card-image">[IMAGEM: jogo adulto]</div>
+                    <div class="card-image">
+                        <img src="https://picsum.photos/400/300?random=6&adult" alt="Jogo adulto">
+                    </div>
                     <h3>Transição para o Adulto</h3>
                     <p>Aos 17-18 anos, comece a transição para o time adulto. Muitos jogadores passam por times universitários ou divisionais antes de alcançar a elite.</p>
                 </div>
                 
                 <div class="card">
-                    <div class="card-image">[IMAGEM: atleta profissional]</div>
+                    <div class="card-image">
+                        <img src="https://picsum.photos/400/300?random=7&professional" alt="Atleta profissional">
+                    </div>
                     <h3>Consolidação da Carreira</h3>
                     <p>Estabeleça-se como atleta profissional, seja no cenário nacional ou internacional. A carreira pode durar até os 35-40 anos para alguns atletas.</p>
                 </div>
@@ -298,8 +358,9 @@
         <section class="stats">
             <h2>Requisitos e Estatísticas</h2>
             
-            <div class="image-placeholder">
-                [ESPAÇO PARA GRÁFICO: Estatísticas de altura e físico de jogadores profissionais]
+            <div class="image-placeholder medium">
+                <img src="https://picsum.photos/800/400?random=8&chart" alt="Estatísticas de altura e físico">
+                <div class="image-caption">Estatísticas de altura e físico de jogadores profissionais</div>
             </div>
             
             <h3>Características Físicas Importantes</h3>
@@ -315,16 +376,29 @@
             <p>Apenas cerca de 0,03% dos jogadores de voleibol juvenil conseguem chegar ao profissionalismo. No Brasil, estima-se que existam aproximadamente 500 jogadores profissionais na elite, para uma base de mais de 1,5 milhão de praticantes regulares.</p>
             
             <div class="image-placeholder small">
-                [ESPAÇO PARA INFOGRAFICO: Pirâmide de sucesso no vôlei]
+                <img src="https://picsum.photos/800/300?random=9&pyramid" alt="Pirâmide de sucesso no vôlei">
+                <div class="image-caption">Pirâmide de sucesso no vôlei</div>
             </div>
         </section>
         
         <h2>Momentos Inspiradores do Vôlei Brasileiro</h2>
         <div class="gallery">
-            <div class="gallery-item">[FOTO: Seleção brasileira campeã]</div>
-            <div class="gallery-item">[FOTO: Jogador famoso em ação]</div>
-            <div class="gallery-item">[FOTO: Medalha de ouro olímpica]</div>
-            <div class="gallery-item">[FOTO: Torcida apoiando]</div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/300/200?random=10&champion" alt="Seleção brasileira campeã">
+                <div class="gallery-caption">Seleção brasileira campeã</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/300/200?random=11&player" alt="Jogador famoso em ação">
+                <div class="gallery-caption">Jogador famoso em ação</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/300/200?random=12&medal" alt="Medalha de ouro olímpica">
+                <div class="gallery-caption">Medalha de ouro olímpica</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://picsum.photos/300/200?random=13&fans" alt="Torcida apoiando">
+                <div class="gallery-caption">Torcida apoiando</div>
+            </div>
         </div>
         
         <section class="probability">
@@ -336,8 +410,9 @@
         
         <section class="conclusion">
             <h2>Conclusão</h2>
-            <div class="image-placeholder">
-                [ESPAÇO PARA IMAGEM: Jovens atletas motivados]
+            <div class="image-placeholder large">
+                <img src="https://picsum.photos/1200/600?random=14&young" alt="Jovens atletas motivados">
+                <div class="image-caption">Jovens atletas motivados durante treino</div>
             </div>
             <p>O caminho para se tornar um jogador profissional de vôlei é extremamente desafiador, requerendo não apenas talento natural, mas também dedicação intensa, suporte adequado e uma dose de sorte. Apesar das probabilidades baixas, para aqueles que possuem a combinação certa de atributos físicos, habilidades técnicas e mentalidade competitiva, a carreira profissional pode ser uma realidade gratificante.</p>
             <p>Mesmo para aqueles que não alcançam o profissionalismo, o vôlei oferece benefícios como bolsas de estudo, desenvolvimento de disciplina e oportunidades de relacionamento que valem o esforço investido.</p>
