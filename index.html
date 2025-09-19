@@ -24,6 +24,18 @@
             padding: 2rem 0;
             text-align: center;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.05"><circle cx="50" cy="20" r="10" fill="white"/><circle cx="20" cy="60" r="15" fill="white"/><circle cx="80" cy="70" r="8" fill="white"/></svg>');
+            opacity: 0.1;
         }
         
         .container {
@@ -35,6 +47,7 @@
         h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
         
         h2 {
@@ -59,6 +72,29 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
             margin: 2rem 0;
+            position: relative;
+        }
+        
+        .image-placeholder {
+            background-color: #e6f2ff;
+            border: 2px dashed #207cca;
+            border-radius: 8px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1.5rem 0;
+            color: #207cca;
+            font-weight: bold;
+            overflow: hidden;
+        }
+        
+        .image-placeholder.small {
+            height: 150px;
+        }
+        
+        .image-placeholder.large {
+            height: 300px;
         }
         
         .card-container {
@@ -76,6 +112,21 @@
             flex: 1 1 calc(33.333% - 20px);
             min-width: 300px;
             transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-image {
+            height: 160px;
+            background-color: #e6f2ff;
+            border-radius: 6px;
+            margin: -1.5rem -1.5rem 1rem -1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #207cca;
+            font-weight: bold;
+            border-bottom: 2px solid #1e5799;
         }
         
         .card:hover {
@@ -104,6 +155,18 @@
             text-align: center;
             border-radius: 8px;
             margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .probability-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.1"><circle cx="50" cy="20" r="10" fill="white"/><circle cx="20" cy="60" r="15" fill="white"/><circle cx="80" cy="70" r="8" fill="white"/></svg>');
+            opacity: 0.1;
         }
         
         .probability h2 {
@@ -125,6 +188,25 @@
             margin: 2rem 0;
         }
         
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 2rem 0;
+        }
+        
+        .gallery-item {
+            height: 180px;
+            background-color: #e6f2ff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #207cca;
+            font-weight: bold;
+            border: 2px dashed #207cca;
+        }
+        
         footer {
             background-color: #333;
             color: white;
@@ -137,11 +219,22 @@
             .card {
                 flex: 1 1 100%;
             }
+            
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <header>
+        <div class="header-overlay"></div>
         <div class="container">
             <h1>Como se Tornar um Jogador de Vôlei Profissional</h1>
             <p>Um guia sobre o caminho para o profissionalismo e as chances de sucesso</p>
@@ -151,6 +244,9 @@
     <div class="container">
         <section class="intro">
             <h2>Introdução</h2>
+            <div class="image-placeholder large">
+                [ESPAÇO PARA IMAGEM DE DESTAQUE: jogadores de vôlei em ação]
+            </div>
             <p>O voleibol é um dos esportes mais populares do Brasil, país reconhecido mundialmente por sua excelência nessa modalidade. Tornar-se um jogador profissional de vôlei é o sonho de muitos jovens atletas, mas o caminho é desafiador e requer dedicação, talento e perseverança.</p>
             <p>Neste guia, exploraremos os passos necessários para buscar uma carreira no vôlei profissional e analisaremos as probabilidades reais de alcançar esse objetivo.</p>
         </section>
@@ -160,16 +256,19 @@
             
             <div class="card-container">
                 <div class="card">
+                    <div class="card-image">[IMAGEM: crianças jogando vôlei]</div>
                     <h3>Início e Formação Básica</h3>
                     <p>Comece cedo, preferencialmente entre 8 e 14 anos. Participe de escolinhas de vôlei e desenvolva os fundamentos básicos: passe, levantamento, ataque, bloqueio e saque.</p>
                 </div>
                 
                 <div class="card">
+                    <div class="card-image">[IMAGEM: competição juvenil]</div>
                     <h3>Participação em Competições</h3>
                     <p>Jogue por times escolares e participe de competições locais e estaduais. Isso proporciona experiência e visibilidade para scouts e técnicos.</p>
                 </div>
                 
                 <div class="card">
+                    <div class="card-image">[IMAGEM: treino em categoria de base]</div>
                     <h3>Ingresso em Categorias de Base</h3>
                     <p>Busque entrar nas categorias de base de clubes reconhecidos. Muitos atletas profissionais foram descobertos em peneiras e competições de base.</p>
                 </div>
@@ -177,16 +276,19 @@
             
             <div class="card-container">
                 <div class="card">
+                    <div class="card-image">[IMAGEM: exercícios técnicos]</div>
                     <h3>Desenvolvimento Técnico e Físico</h3>
                     <p>Invista em treinamento especializado, incluindo preparação física, técnica individual e compreensão tática do jogo.</p>
                 </div>
                 
                 <div class="card">
+                    <div class="card-image">[IMAGEM: jogo adulto]</div>
                     <h3>Transição para o Adulto</h3>
                     <p>Aos 17-18 anos, comece a transição para o time adulto. Muitos jogadores passam por times universitários ou divisionais antes de alcançar a elite.</p>
                 </div>
                 
                 <div class="card">
+                    <div class="card-image">[IMAGEM: atleta profissional]</div>
                     <h3>Consolidação da Carreira</h3>
                     <p>Estabeleça-se como atleta profissional, seja no cenário nacional ou internacional. A carreira pode durar até os 35-40 anos para alguns atletas.</p>
                 </div>
@@ -195,6 +297,10 @@
         
         <section class="stats">
             <h2>Requisitos e Estatísticas</h2>
+            
+            <div class="image-placeholder">
+                [ESPAÇO PARA GRÁFICO: Estatísticas de altura e físico de jogadores profissionais]
+            </div>
             
             <h3>Características Físicas Importantes</h3>
             <ul>
@@ -207,9 +313,22 @@
             
             <h3>Estatísticas de Sucesso</h3>
             <p>Apenas cerca de 0,03% dos jogadores de voleibol juvenil conseguem chegar ao profissionalismo. No Brasil, estima-se que existam aproximadamente 500 jogadores profissionais na elite, para uma base de mais de 1,5 milhão de praticantes regulares.</p>
+            
+            <div class="image-placeholder small">
+                [ESPAÇO PARA INFOGRAFICO: Pirâmide de sucesso no vôlei]
+            </div>
         </section>
         
+        <h2>Momentos Inspiradores do Vôlei Brasileiro</h2>
+        <div class="gallery">
+            <div class="gallery-item">[FOTO: Seleção brasileira campeã]</div>
+            <div class="gallery-item">[FOTO: Jogador famoso em ação]</div>
+            <div class="gallery-item">[FOTO: Medalha de ouro olímpica]</div>
+            <div class="gallery-item">[FOTO: Torcida apoiando]</div>
+        </div>
+        
         <section class="probability">
+            <div class="probability-overlay"></div>
             <h2>Quais são as chances reais?</h2>
             <div class="percentage">0,03%</div>
             <p>Das milhões de pessoas que jogam vôlei regularmente no Brasil, apenas uma pequena fração consegue se tornar profissional e viver do esporte.</p>
@@ -217,6 +336,9 @@
         
         <section class="conclusion">
             <h2>Conclusão</h2>
+            <div class="image-placeholder">
+                [ESPAÇO PARA IMAGEM: Jovens atletas motivados]
+            </div>
             <p>O caminho para se tornar um jogador profissional de vôlei é extremamente desafiador, requerendo não apenas talento natural, mas também dedicação intensa, suporte adequado e uma dose de sorte. Apesar das probabilidades baixas, para aqueles que possuem a combinação certa de atributos físicos, habilidades técnicas e mentalidade competitiva, a carreira profissional pode ser uma realidade gratificante.</p>
             <p>Mesmo para aqueles que não alcançam o profissionalismo, o vôlei oferece benefícios como bolsas de estudo, desenvolvimento de disciplina e oportunidades de relacionamento que valem o esforço investido.</p>
         </section>
